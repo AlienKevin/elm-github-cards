@@ -48,6 +48,9 @@ viewGithubCard attributes =
         []
 ```
 
+# Ad Blockers
+Some Ad Blockers like [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp) might block the api requests, make sure to unblock them to see the cards.
+
 # Development
 Run the example with [`elm-live`](https://github.com/wking-io/elm-live)
 ```
