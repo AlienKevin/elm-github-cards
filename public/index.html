@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- optional: If you encounter CORS policy restriction or GitHub API rate limits
+  , try registering your app on GitHub following instructions here:
+  https://developer.github.com/v3/guides/basics-of-authentication/#implementing-persistent-authentication
+  The followings are sample client-id and client-secret, you should generate your own.
+  <meta name="gc:client-id" content="e1278ru7243sa42s">
+  <meta name="gc:client-secret" content="iese2834024jks82248jkwe"> -->
+  <title>elm-github-cards</title>
+</head>
+<body>
+  <main></main>
+  <script src="/public/elm.js"></script>
+  <script>
+    var app = Elm.Main.init({ node: document.querySelector('main') });
+    
+    app.ports.renderGithubCards.subscribe(function() {
+      // Since we generate the base div element in the Elm view function
+      // and call this port function in the Elm init function,
+      // we need to wait until Elm inserted the divs into the DOM
+      function waitForElementToDisplay(className, time) {
+        if(document.getElementsByClassName(className)!=null) {
+          console.log("rendering Github Cards...");
+          // minified version of https://github.com/lepture/github-cards/blob/master/src/widget.js
+      (function(m){function g(b,c){return b.getAttribute("data-"+c)}function D(b){window.addEventListener&&window.addEventListener("message",function(c){b.id===c.data.sender&&(b.height=c.data.height)},!1)}function q(b,c){c=c||r;if(!c){var h=g(b,"theme")||t||"default";c=u+"cards/"+h+".html"}var e=g(b,"user");h=g(b,"repo");var k=g(b,"github");k&&(k=k.split("/"),k.length&&!e&&(e=k[0],h=h||k[1]));if(e){v+=1;k=g(b,"width");var w=g(b,"height"),x=g(b,"target"),z=g(b,"client-id")||y,B=g(b,"client-secret")||A,C=
+"ghcard-"+e+"-"+v,f=m.createElement("iframe");f.setAttribute("id",C);f.setAttribute("frameborder",0);f.setAttribute("scrolling",0);f.setAttribute("allowtransparency",!0);e=c+"?user="+e+"&identity="+C;h&&(e+="&repo="+h);x&&(e+="&target="+x);z&&B&&(e+="&client_id="+z+"&client_secret="+B);f.src=e;f.width=k||Math.min(b.parentNode.clientWidth||400,400);w&&(f.height=w);D(f);b.parentNode.replaceChild(f,b);return f}}var u="//lab.lepture.com/github-cards/",d,v=0,l=m.getElementsByTagName("meta"),r,y,A,t;for(d=
+0;d<l.length;d++){var n=l[d].getAttribute("name"),p=l[d].getAttribute("content");"gc:url"===n?r=p:"gc:base"===n?u=p:"gc:client-id"===n?y=p:"gc:client-secret"===n?A=p:"gc:theme"===n&&(t=p)}l=function(b){if(m.querySelectorAll)return m.querySelectorAll("."+b);var c=m.getElementsByTagName("div"),h=[];for(d=0;d<c.length;d++)~c[d].className.split(" ").indexOf(b)&&h.push(c[d]);return h}("github-card");for(d=0;d<l.length;d++)q(l[d]);window.a&&(window.a.b=q)})(document);
+          return;
+        }
+        else {
+          setTimeout(function() {
+            waitForElementToDisplay(selector, time);
+          }, time);
+        }
+      }
+      waitForElementToDisplay("github-card", 100);
+    });
+  </script>
+</body>
+</html>
