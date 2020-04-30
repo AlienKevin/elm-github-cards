@@ -51,5 +51,14 @@ viewGithubCard attributes =
 # Development
 Run the example with [`elm-live`](https://github.com/wking-io/elm-live)
 ```
+sed -i 's+src="elm.js"+src="/public/elm.js"+' public/index.html
 elm-live src/Main.elm --start-page public/index.html -- --output=public/elm.js
 ```
+
+# Deployment
+Run the build script
+```
+./build.sh
+```
+
+> Note: you may have to enable execution permission for the build script using `chmod +x ./build.sh` before you can run it.

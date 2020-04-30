@@ -38,7 +38,7 @@ view model =
         ]
         [ h1 [] [ text "Github Cards in Elm"]
         , h2 [] [ text "Github Repo" ]
-        , viewRepoGithubCard "AIwaffle" "AIwaffle"
+        , viewRepoGithubCard "AlienKevin" "elm-github-cards"
         , h2 [] [ text "Github User" ]
         , viewUserGithubCard "AlienKevin"
         ]
@@ -63,7 +63,7 @@ viewGithubCard : List (Html.Attribute Msg) -> Html Msg
 viewGithubCard attributes =
     Html.div
         ([ Html.Attributes.class "github-card"
-        , Html.Attributes.attribute "data-width" "300"
+        , Html.Attributes.attribute "data-width" "400"
         , Html.Attributes.attribute "data-height" ""
         , Html.Attributes.attribute "data-theme" "default"
         , Html.Attributes.attribute "data-target" "blank"

@@ -1,0 +1,24 @@
+{
+  "name": "elm-github-cards",
+  "version": "1.0.0",
+  "description": "Show cards of Github repos and users",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "terser": "^4.6.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlienKevin/elm-github-cards.git"
+  },
+  "keywords": [],
+  "author": "Kevin Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlienKevin/elm-github-cards/issues"
+  },
+  "homepage": "https://github.com/AlienKevin/elm-github-cards#readme"
+}
