@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "terser": "^4.6.13"
+    "terser": "^4.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
